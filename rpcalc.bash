@@ -8,17 +8,21 @@
 # remainders. For example, 7/2 = 3R1.
 
 # Check the number of arguments passed through CLI
-if ["$#" -ne 3]; then
+if [ "$#" -ne 3 ]; then
 	echo "-- RP CALC --- "
 	echo "Usage: $0 operand1 operand2 operator"
 	echo "Permitted Operations: +, -, *, /"
 	echo "Only integers accepted and returned. Remainders noted with R prefix."
+	echo "Multiply operators have to be quoted to function like so: '*'. If the * is not " 
+	echo "escaped, the CLI will interperet it as a wildcard character causing an "
+	echo "undefined operator error or help message."
+	exit 1
 fi
 
 # $0 is the script name so it is not included.
 operand1="$1"
 operand2="$2"
-operand3="$3"
+operator="$3"
 
 # Verify that operands are integers.
 # ^ = start of line. -? = matches one negative sign or positive sign. [0-9] char class.
