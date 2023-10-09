@@ -9,7 +9,7 @@
 
 # Check the number of arguments passed through CLI
 if [ "$#" -ne 3 ]; then
-	echo "-- RP CALC --- "
+	echo "--- RP CALC HELP --- "
 	echo "Usage: $0 operand1 operand2 operator"
 	echo "Permitted Operations: +, -, *, /"
 	echo "Only integers accepted and returned. Remainders noted with R prefix."
