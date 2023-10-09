@@ -23,7 +23,8 @@ operand3="$3"
 # Verify that operands are integers.
 # ^ = start of line. -? = matches one negative sign or positive sign. [0-9] char class.
 # + = one or more of preceeding element. $ = asserts end of line
-# 
+# The regex matches integers, all other data types trigger a type error.
+
 if ! [[ "$operand1" =~ ^-?[0-9]+$ ]] || ! [[ "$operand2" =~ ^-?[0-9]+$ ]]; then
 	echo "Error: Invalid type: Both operands should be integers."
 	exit 1
